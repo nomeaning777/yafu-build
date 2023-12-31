@@ -19,7 +19,7 @@ RUN apt-get update && \
 ARG GMP_VERSION
 
 WORKDIR /data
-RUN curl --fail -L https://gmplib.org/download/gmp/gmp-${GMP_VERSION}.tar.zst -O && \
+RUN curl --fail -L https://ftp.gnu.org/gnu/gmp/gmp-${GMP_VERSION}.tar.zst -O && \
     mkdir gmp && \
     cd gmp && \
     tar -I zstd -xf ../gmp-${GMP_VERSION}.tar.zst --strip-components=1
