@@ -1,0 +1,14 @@
+diff --git a/Makefile b/Makefile
+index 42fc364..f32cdd9 100644
+--- a/Makefile
++++ b/Makefile
+@@ -139,7 +139,7 @@ endif
+ 
+ ifeq ($(NFS),1)
+        CFLAGS += -DUSE_NFS
+-       LIBS += -lmsieve
++       LIBS += -lmsieve -lz
+ endif
+ 
+ ifeq ($(FORCE_GENERIC),1)
+ 
