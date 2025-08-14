@@ -1,13 +1,11 @@
-diff --git a/Makefile b/Makefile
-index 42fc364..f32cdd9 100644
---- a/Makefile
-+++ b/Makefile
-@@ -139,7 +139,7 @@ endif
+--- Makefile.orig	2025-01-01 00:00:00.000000000 +0000
++++ Makefile	2025-01-01 00:00:00.000000000 +0000
+@@ -669,7 +669,7 @@
+ 	rm -f libynfs.a
+ 	ar r libynfs.a $(YAFU_NFS_OBJS) $(YAFU_COMMON_OBJS)
+ 	ranlib libynfs.a
+-	$(CC) $(CFLAGS) $(YAFU_OBJS) -o yafu -lysiqs  -lyecm  -lynfs -lmsieve $(LIBS)
++	$(CC) $(CFLAGS) $(YAFU_OBJS) -o yafu -lysiqs  -lyecm  -lynfs -lmsieve -lz $(LIBS)
  
- ifeq ($(NFS),1)
- 	CFLAGS += -DUSE_NFS
--	LIBS += -lmsieve
-+	LIBS += -lmsieve -lz
- endif
- 
- ifeq ($(FORCE_GENERIC),1)
+ siqs: $(MSIEVE_YAFU_OBJS) $(YAFU_SIQS_OBJS) $(YAFU_COMMON_OBJS) $(SIQS_BIN_OBJS) 
+ 	rm -f libysiqs.a
